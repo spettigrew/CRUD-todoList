@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Task from './Task'
 
 function TaskList({tasks}) {
@@ -8,9 +8,9 @@ function TaskList({tasks}) {
         <div>
             {tasks.map(task => <Task key={task.id} task={task} />)}
         <button>
-            <Link to='./addtask'>
+            <NavLink to='/addtask'>
                 Add Task
-                </Link>
+                </NavLink>
         </button>
         </div>
     )
