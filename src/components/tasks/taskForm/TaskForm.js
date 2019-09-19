@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 
-function TaskForm() {
+function TaskForm({setTasks,tasks, history}) {
     const [formValues, setFormValues] = useState({
-        id: null, task: '', completed: false
+        id: Date.now(), task: '', completed: false
     })
 
     function handleChange({target: {name, value}}) {
@@ -12,7 +12,10 @@ function TaskForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formValues);
+        setFormValues(state => ({...state, id: Date.now()}));
+        setTasks([...tasks, formValues])
+        history.push('/');
+        // console.log(formValues);
     }
     return (
         <div>
