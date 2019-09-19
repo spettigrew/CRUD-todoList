@@ -21,11 +21,22 @@ function App() {
         }
     }, [tasks.length])
 
+    function toggleComplete(id) {
+        const updatedTasks = tasks.map(task => {
+            if (task.id ===id) {
+                return ({...task, completed: !task.completed})
+            } else {
+                return task;
+            }
+        })
+        setTasks(updatedTasks)
+    }
+
     return (
         <div>
             <Switch>
                 <Route path='/addtask' render={props => <TaskForm {...props} setTasks={setTasks} tasks={tasks} />} />
-                <Route exact path='/' render={props => <TaskList {...props} tasks={tasks} />} setTasks={setTasks} />
+                <Route exact path='/' render={props => <TaskList {...props} tasks={tasks} />} setTasks={setTasks}toggle={toggleComplete} />
             </Switch>
         </div>
     )
