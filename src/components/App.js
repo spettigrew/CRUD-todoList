@@ -25,7 +25,7 @@ function App() {
         <div>
             <Switch>
                 <Route path='/addtask' render={props => <TaskForm {...props} setTasks={setTasks} tasks={tasks} />} />
-                <Route exact path='/' render={props => <TaskList {...props} tasks={tasks} />} />
+                <Route exact path='/' render={props => <TaskList {...props} tasks={tasks} />} setTasks={setTasks} />
             </Switch>
         </div>
     )

@@ -17,12 +17,20 @@ function TaskForm({setTasks,tasks, history}) {
         history.push('/');
         // console.log(formValues);
     }
+
+    function handleCancel(){
+      history.push('/');
+    }
+
     return (
         <div>
          <h1>Task Form</h1>
          <form onSubmit={handleSubmit} >
          <label>Task</label>
          <input name='task' value={formValues.task} onChange={handleChange} />
+         <button type='submit'>Submit</button>
+         <button>Cancel</button> 
+         <button onClick={handleCancel}>Cancel</button>
             </form>
         </div>
     )
