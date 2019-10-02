@@ -31,7 +31,7 @@ function App() {
         })
         setTasks(updatedTasks)
     }
-    function deleteCompleted(){
+    function deleteCompleted() {
         const updatedTasks = tasks.filter(task => !task.completed);
         setTasks(updatedTasks);
     }

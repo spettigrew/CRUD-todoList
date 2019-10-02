@@ -2,13 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Task from './Task'
 
-function TaskList({props}) {
+function TaskList(props) {
     console.log(props)
     
     return (
         <div>
             <ul>
-                props.tasks.map({task => <Task key={task.id} task={task} toggle={props.toggle} />})
+    {props.tasks.map(task => <Task key={task.id} task={task} toggle={props.toggle} />)}
             </ul>
         <button>
             <NavLink to='/addtask'>

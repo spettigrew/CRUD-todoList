@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 function TaskForm({setTasks,tasks, history, edit, match: {params: {id}} }) {
     const [formValues, setFormValues] = useState({
-        id: Date.now(), task: '', completed: false
+        id: Date.now(), 
+        task: '', 
+        completed: false
     })
 
     useEffect(() => {
@@ -13,7 +15,7 @@ function TaskForm({setTasks,tasks, history, edit, match: {params: {id}} }) {
         }
     }, [])
 
-    function handleChange({target: {name, value}}) {
+    function handleChange({target: { name, value } }) {
         setFormValues({...formValues, [name]: value});
     }
 
@@ -53,7 +55,6 @@ function TaskForm({setTasks,tasks, history, edit, match: {params: {id}} }) {
          <label>Task</label>
          <input name='task' value={formValues.task} onChange={handleChange} />
          <button type='submit'>Submit</button>
-         <button>Cancel</button> 
          <button onClick={handleCancel}>Cancel</button>
             </form>
         </div>
